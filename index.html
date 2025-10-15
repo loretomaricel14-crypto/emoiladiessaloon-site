@@ -4,9 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emoi Ladies Saloon</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Optional favicon: add /favicon.ico to the repo root to enable
+  <link rel="icon" href="/favicon.ico">
+  -->
+
   <style>
     :root {
       --brand: #16a34a;     /* green accent */
@@ -15,31 +22,36 @@
       --muted: #6b7280;
       --card: #ffffff;
       --ring: rgba(22,163,74,.12);
+      --border: #eef3ef;
     }
-    * { box-sizing:border-box }
+
+    * { box-sizing: border-box }
+    html, body { margin:0; padding:0 }
     body {
-      margin:0;
-      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:var(--bg);
       line-height:1.6;
     }
+
+    /* Layout */
+    .wrap { max-width:1120px; margin:0 auto; padding:0 20px }
     header {
-      padding:22px 20px;
-      display:flex; align-items:center; gap:14px; justify-content:space-between;
-      max-width:1120px; margin:0 auto;
+      padding:22px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
-    .brand {
-      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
-    }
-    .brand .dot { width:10px; height:10px; border-radius:50%; background:var(--brand); }
-    .cta-whatsapp {
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px }
+    .brand .dot { width:10px; height:10px; border-radius:50%; background:var(--brand) }
+
+    .cta {
       background:var(--brand); color:#fff; text-decoration:none; border-radius:999px; padding:10px 16px;
       font-weight:600; box-shadow:0 8px 20px var(--ring);
     }
+
+    /* Hero */
     .hero {
-      max-width:1120px; margin:18px auto 36px; padding:0 20px;
       display:grid; grid-template-columns:1.05fr .95fr; gap:26px;
+      margin:18px 0 36px;
     }
     .h-text h1 {
       font-size:clamp(28px,5vw,48px); line-height:1.1; margin:0 0 14px;
@@ -53,107 +65,120 @@
     }
     .btn-primary { background:var(--brand); color:#fff; box-shadow:0 10px 24px var(--ring) }
     .btn-ghost { background:#fff; color:var(--ink); border:1px solid #eee }
+
     .h-media {
       background:linear-gradient(180deg,#ffffff, #f8fff9);
-      border:1px solid #eef3ef; border-radius:18px; overflow:hidden;
+      border:1px solid var(--border); border-radius:18px; overflow:hidden;
       box-shadow:0 14px 40px rgba(0,0,0,.07);
     }
     .h-media img { width:100%; height:auto; display:block }
-    section { max-width:1120px; margin:0 auto; padding:0 20px 52px }
+
+    /* Sections */
+    section { margin:0 0 56px }
     h2 { font-size:28px; margin:34px 0 14px }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+
+    .grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:16px
+    }
     .card {
-      background:var(--card); border:1px solid #eef3ef; border-radius:16px; overflow:hidden;
+      background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
       box-shadow:0 10px 28px rgba(0,0,0,.05);
     }
-    .card img, .card video { width:100%; height:170px; object-fit:cover; display:block }
+    .card img { width:100%; height:180px; object-fit:cover; display:block }
     .card .pad { padding:14px }
     .muted { color:var(--muted) }
+
     footer {
-      padding:22px 20px 50px; border-top:1px solid #eef3ef; background:#fff;
+      padding:22px 0 48px; border-top:1px solid var(--border); background:#fff;
     }
-    .footgrid { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr; gap:20px }
-    .contact p { margin:4px 0 }
+    .footgrid { display:grid; grid-template-columns:2fr 1fr; gap:20px }
+    .contact p { margin:6px 0 }
+
     @media (max-width:960px) {
-      .hero { grid-template-columns:1fr; }
-      .grid { grid-template-columns:1fr 1fr; }
+      .hero { grid-template-columns:1fr }
+      .grid { grid-template-columns:1fr 1fr }
     }
     @media (max-width:640px) {
-      .grid { grid-template-columns:1fr; }
+      .grid { grid-template-columns:1fr }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
-    <a class="cta-whatsapp" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
+      <a class="cta" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
+    </header>
 
-  <div class="hero">
-    <div class="h-text">
-      <h1>Glow • Calm • Clinic-style care at Home</h1>
-      <p>Device-assisted facials (whitening, firming & hydrating), RF tightening, body slimming and relaxing massage—delivered to your home.</p>
-      <div class="h-actions">
-        <a class="btn btn-primary" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book Now</a>
-        <a class="btn btn-ghost" href="#services">View Services</a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="h-text">
+        <h1>Glow • Calm • Clinic-style care at Home</h1>
+        <p>Device-assisted facials (whitening, firming & hydrating), RF tightening, body slimming and relaxing massage—delivered to your home.</p>
+        <div class="h-actions">
+          <a class="btn btn-primary" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book Now</a>
+          <a class="btn btn-ghost" href="#services">View Services</a>
+        </div>
       </div>
-    </div>
-    <div class="h-media">
-      <!-- Replace this image URL any time -->
-      <img src="https://images.unsplash.com/photo-1584466977773-3fcb1c1c74b2?q=80&w=1600&auto=format&fit=crop" alt="Facial treatment" />
-    </div>
+      <div class="h-media">
+        <!-- HERO IMAGE (uses your uploaded file) -->
+        <img src="assets/images/whitening.jpg.jpg" alt="Facial treatment" />
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/images/whitening.jpg.jpg" alt="Whitening facial" />
+          <div class="pad">
+            <strong>Whitening Facial</strong>
+            <p class="muted">Brighten & even skin tone with device-assisted care.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/firming.jpg.jpg" alt="Firming facial (RF)" />
+          <div class="pad">
+            <strong>Firming Facial (RF)</strong>
+            <p class="muted">Lift & tighten with radio-frequency treatment.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/slimming.jpg.jpg" alt="Body slimming" />
+          <div class="pad">
+            <strong>Body Slimming</strong>
+            <p class="muted">Abdomen • Legs/Thighs • Arms</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/rf-body.jpg.jpg" alt="RF Tightening body" />
+          <div class="pad">
+            <strong>RF Tightening — Body</strong>
+            <p class="muted">Firm skin & boost elasticity head-to-toe.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/svc-massage.jpg.jpg" alt="Relaxation massage" />
+          <div class="pad">
+            <strong>Relaxation Massage (60 min)</strong>
+            <p class="muted">De-stress and rebalance with a cozy, clinic-style feel.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/rf-face.jpg.jpg" alt="RF face tightening" />
+          <div class="pad">
+            <strong>RF Tightening — Face</strong>
+            <p class="muted">Lift, contour, and glow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" alt="Facial whitening" />
-        <div class="pad">
-          <strong>Whitening Facial</strong>
-          <p class="muted">Brighten & even skin tone with device-assisted care.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1556228110-66402d9590f0?q=80&w=1200&auto=format&fit=crop" alt="Firming facial" />
-        <div class="pad">
-          <strong>Firming Facial (RF)</strong>
-          <p class="muted">Lift & tighten with radio-frequency treatment.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600644971730-5f3b6c2a32f6?q=80&w=1200&auto=format&fit=crop" alt="Body slimming" />
-        <div class="pad">
-          <strong>Body Slimming</strong>
-          <p class="muted">Abdomen • Legs/Thighs • Arms</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1580281657521-5e1e7d74b89e?q=80&w=1200&auto=format&fit=crop" alt="RF Tightening body" />
-        <div class="pad">
-          <strong>RF Tightening — Body</strong>
-          <p class="muted">Firm skin & boost elasticity head-to-toe.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1585237016566-c09775d6f424?q=80&w=1200&auto=format&fit=crop" alt="Massage" />
-        <div class="pad">
-          <strong>Relaxation Massage (60 min)</strong>
-          <p class="muted">De-stress and rebalance with a cozy, clinic-style feel.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop" alt="RF face" />
-        <div class="pad">
-          <strong>RF Tightening — Face</strong>
-          <p class="muted">Lift, contour, and glow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    <div class="footgrid">
+    <div class="wrap footgrid">
       <div>
         <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
         <p class="muted">Cozy, professional, and minimalist—wellness that feels like a clinic, not a spa.</p>
