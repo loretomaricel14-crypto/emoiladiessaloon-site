@@ -5,183 +5,260 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emoi Ladies Saloon</title>
 
-  <!-- Fonts -->
+  <!-- Fonts & Favicon -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Optional favicon: add /favicon.ico to the repo root to enable
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico">
-  -->
 
   <style>
-    :root {
-      --brand: #16a34a;     /* green accent */
-      --bg: #fffaf6;
-      --ink: #243041;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --ring: rgba(22,163,74,.12);
-      --border: #eef3ef;
+    :root{
+      --brand:#16a34a;        /* green accent */
+      --bg:#fffaf6;           /* warm beige bg */
+      --ink:#243041;          /* dark ink */
+      --muted:#6b7280;        /* gray text */
+      --card:#ffffff;         /* card bg */
+      --ring:rgba(22,163,74,.12);
+      --line:#eef3ef;
     }
-
-    * { box-sizing: border-box }
-    html, body { margin:0; padding:0 }
-    body {
-      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink);
       background:var(--bg);
       line-height:1.6;
     }
-
-    /* Layout */
-    .wrap { max-width:1120px; margin:0 auto; padding:0 20px }
-    header {
-      padding:22px 0;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    a{color:inherit}
+    /* Header */
+    header{
+      padding:22px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      max-width:1120px;margin:0 auto;
     }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px }
-    .brand .dot { width:10px; height:10px; border-radius:50%; background:var(--brand) }
-
-    .cta {
-      background:var(--brand); color:#fff; text-decoration:none; border-radius:999px; padding:10px 16px;
-      font-weight:600; box-shadow:0 8px 20px var(--ring);
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
+    .cta-whatsapp{
+      background:var(--brand);color:#fff;text-decoration:none;border-radius:999px;padding:10px 16px;
+      font-weight:700;box-shadow:0 8px 20px var(--ring)
     }
 
     /* Hero */
-    .hero {
-      display:grid; grid-template-columns:1.05fr .95fr; gap:26px;
-      margin:18px 0 36px;
+    .hero{
+      max-width:1120px;margin:18px auto 24px;padding:0 20px;
+      display:grid;grid-template-columns:1.05fr .95fr;gap:26px
     }
-    .h-text h1 {
-      font-size:clamp(28px,5vw,48px); line-height:1.1; margin:0 0 14px;
-      letter-spacing:.2px;
+    .h-text h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px}
+    .h-text p{color:var(--muted);margin:0 0 18px}
+    .h-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px var(--ring)}
+    .btn-ghost{background:#fff;color:var(--ink);border:1px solid #eee}
+    .h-media{
+      background:linear-gradient(180deg,#ffffff,#f8fff9);
+      border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.07)
     }
-    .h-text p { color:var(--muted); margin:0 0 20px }
-    .h-actions { display:flex; gap:12px; flex-wrap:wrap }
-    .btn {
-      border-radius:999px; padding:12px 18px; font-weight:700; text-decoration:none;
-      display:inline-flex; align-items:center; gap:8px;
-    }
-    .btn-primary { background:var(--brand); color:#fff; box-shadow:0 10px 24px var(--ring) }
-    .btn-ghost { background:#fff; color:var(--ink); border:1px solid #eee }
+    .h-media img{width:100%;height:auto;display:block}
 
-    .h-media {
-      background:linear-gradient(180deg,#ffffff, #f8fff9);
-      border:1px solid var(--border); border-radius:18px; overflow:hidden;
-      box-shadow:0 14px 40px rgba(0,0,0,.07);
+    /* Feature (pillars) */
+    .pillars{max-width:1120px;margin:8px auto 28px;padding:0 20px}
+    .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pillar{
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.04)
     }
-    .h-media img { width:100%; height:auto; display:block }
+    .pillar h3{margin:6px 0 6px;font-size:16px}
+    .pillar p{color:var(--muted);font-size:14px;margin:0}
+    .pillar .icon{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:48px;height:48px;border-radius:12px;background:#f6fff9;border:1px solid #e5f4ea;margin:0 auto 10px
+    }
+    .pillar .icon svg{width:26px;height:26px;stroke:var(--brand);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-    /* Sections */
-    section { margin:0 0 56px }
-    h2 { font-size:28px; margin:34px 0 14px }
+    /* Sections & services */
+    section{max-width:1120px;margin:0 auto;padding:0 20px 46px}
+    h2{font-size:28px;margin:30px 0 12px}
+    .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+    .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.05)}
+    .svc img{width:100%;height:210px;object-fit:cover;display:block}
+    .svc .pad{padding:14px}
+    .muted{color:var(--muted)}
+    .svc-cta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+    .price{font-weight:700}
+    .mini-btn{border:1px solid #dfe6e0;border-radius:999px;padding:8px 12px;text-decoration:none;font-weight:600;color:var(--ink);background:#fff}
+    .mini-btn:hover{border-color:#cfd7d0}
 
-    .grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:16px
-    }
-    .card {
-      background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
-      box-shadow:0 10px 28px rgba(0,0,0,.05);
-    }
-    .card img { width:100%; height:180px; object-fit:cover; display:block }
-    .card .pad { padding:14px }
-    .muted { color:var(--muted) }
+    /* Footer */
+    footer{padding:22px 20px 50px;border-top:1px solid var(--line);background:#fff}
+    .footgrid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:20px}
+    .contact p{margin:4px 0}
 
-    footer {
-      padding:22px 0 48px; border-top:1px solid var(--border); background:#fff;
-    }
-    .footgrid { display:grid; grid-template-columns:2fr 1fr; gap:20px }
-    .contact p { margin:6px 0 }
-
-    @media (max-width:960px) {
-      .hero { grid-template-columns:1fr }
-      .grid { grid-template-columns:1fr 1fr }
-    }
-    @media (max-width:640px) {
-      .grid { grid-template-columns:1fr }
+    /* Responsive */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .pillars-grid{grid-template-columns:1fr}
+      .row3{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
-      <a class="cta" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="h-text">
-        <h1>Glow • Calm • Clinic-style care at Home</h1>
-        <p>Device-assisted facials (whitening, firming & hydrating), RF tightening, body slimming and relaxing massage—delivered to your home.</p>
-        <div class="h-actions">
-          <a class="btn btn-primary" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book Now</a>
-          <a class="btn btn-ghost" href="#services">View Services</a>
-        </div>
-      </div>
-      <div class="h-media">
-        <!-- HERO IMAGE (uses your uploaded file) -->
-        <img src="assets/images/whitening.jpg.jpg" alt="Facial treatment" />
-      </div>
-    </section>
+  <!-- Header -->
+  <header>
+    <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
+    <a class="cta-whatsapp" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
+  </header>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>Our Services</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="assets/images/whitening.jpg.jpg" alt="Whitening facial" />
-          <div class="pad">
-            <strong>Whitening Facial</strong>
-            <p class="muted">Brighten & even skin tone with device-assisted care.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/firming.jpg.jpg" alt="Firming facial (RF)" />
-          <div class="pad">
-            <strong>Firming Facial (RF)</strong>
-            <p class="muted">Lift & tighten with radio-frequency treatment.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/slimming.jpg.jpg" alt="Body slimming" />
-          <div class="pad">
-            <strong>Body Slimming</strong>
-            <p class="muted">Abdomen • Legs/Thighs • Arms</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/rf-body.jpg.jpg" alt="RF Tightening body" />
-          <div class="pad">
-            <strong>RF Tightening — Body</strong>
-            <p class="muted">Firm skin & boost elasticity head-to-toe.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/svc-massage.jpg.jpg" alt="Relaxation massage" />
-          <div class="pad">
-            <strong>Relaxation Massage (60 min)</strong>
-            <p class="muted">De-stress and rebalance with a cozy, clinic-style feel.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/rf-face.jpg.jpg" alt="RF face tightening" />
-          <div class="pad">
-            <strong>RF Tightening — Face</strong>
-            <p class="muted">Lift, contour, and glow.</p>
-          </div>
-        </div>
+  <!-- HERO (new copy + your image) -->
+  <div class="hero">
+    <div class="h-text">
+      <h1>Glow at Home, Expert Care On Your Schedule</h1>
+      <p>On-demand facials (brightening, hydrating & RF), tightening for face & body, slimming, and relaxing massage — we come to you across the UAE.</p>
+      <div class="h-actions">
+        <a class="btn btn-primary" href="https://wa.me/971567544684?text=Hi%20Emoi!%20I%20want%20to%20book%20a%20home%20treatment." target="_blank" rel="noopener">Book Now</a>
+        <a class="btn btn-ghost" href="#services">View Services</a>
       </div>
-    </section>
+    </div>
+    <div class="h-media">
+      <img src="assets/images/hero-face.jpg.jpg?v=4" alt="Home facial treatment">
+    </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Three small feature boxes with SVG icons -->
+  <section class="pillars">
+    <div class="pillars-grid">
+      <!-- Licensed Therapists -->
+      <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s-6.5-4.1-8.7-7.2C1.6 11.7 2 9.2 3.6 7.9a4 4 0 0 1 5.4.5l.9 1 .9-1a4 4 0 0 1 5.4-.5c1.6 1.3 2 3.8.3 5.9C18.5 16.9 12 21 12 21z"/>
+            <path d="M12 14.5c-1.5-1.2-3.7-1.6-5.5-.9"/>
+          </svg>
+        </div>
+        <h3>Licensed Therapists</h3>
+        <p>Friendly, professional and detail-oriented care at home.</p>
+      </div>
+
+      <!-- Pro Devices -->
+      <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 4l5 5M3 21l7.5-7.5M13 6l5 5"/>
+            <rect x="2.5" y="15.5" width="5" height="6" rx="2"/>
+            <path d="M8 14l2-2"/>
+          </svg>
+        </div>
+        <h3>Pro Devices</h3>
+        <p>RF firming, deep cleansing & body shaping equipment.</p>
+      </div>
+
+      <!-- We Come to You -->
+      <div class="pillar">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 12h18l-1.5-4.5A2 2 0 0 0 17.6 6H6.4a2 2 0 0 0-1.9 1.5L3 12z"/>
+            <path d="M5 12v5a1 1 0 0 0 1 1h1"/>
+            <path d="M19 12v5a1 1 0 0 1-1 1h-1"/>
+            <circle cx="7.5" cy="18" r="1.6"/>
+            <circle cx="16.5" cy="18" r="1.6"/>
+            <path d="M3 14h18"/>
+          </svg>
+        </div>
+        <h3>We Come to You</h3>
+        <p>Appointments anywhere in the UAE, on your time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services (two rows of small photo boxes with prices) -->
+  <section id="services">
+    <h2>Our Services</h2>
+
+    <!-- Row 1 -->
+    <div class="row3">
+      <article class="svc">
+        <img src="assets/images/whitening.jpg.jpg?v=4" alt="Whitening facial">
+        <div class="pad">
+          <strong>Whitening Facial</strong>
+          <p class="muted">Even tone • bright glow • device-assisted</p>
+          <div class="svc-cta">
+            <span class="price">AED 149</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="assets/images/rf-face.jpg.jpg?v=4" alt="RF firming facial">
+        <div class="pad">
+          <strong>Firming Facial (RF)</strong>
+          <p class="muted">Lift & tighten • radio-frequency</p>
+          <div class="svc-cta">
+            <span class="price">AED 199</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="assets/images/svc-massage.jpg.jpg?v=4" alt="Relaxation massage">
+        <div class="pad">
+          <strong>Relaxation Massage (60 min)</strong>
+          <p class="muted">Calm stress • restore balance</p>
+          <div class="svc-cta">
+            <span class="price">AED 129</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row3">
+      <article class="svc">
+        <img src="assets/images/firming.jpg.jpg?v=4" alt="Hydrating facial">
+        <div class="pad">
+          <strong>Hydrating Facial</strong>
+          <p class="muted">Deep cleanse • hydrate • glow</p>
+          <div class="svc-cta">
+            <span class="price">AED 159</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="assets/images/rf-body.jpg.jpg?v=4" alt="RF tightening body">
+        <div class="pad">
+          <strong>RF Tightening — Body</strong>
+          <p class="muted">Firm skin • boost elasticity</p>
+          <div class="svc-cta">
+            <span class="price">AED 229</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="assets/images/slimming.jpg.jpg?v=4" alt="Body slimming">
+        <div class="pad">
+          <strong>Body Slimming</strong>
+          <p class="muted">Abdomen • Legs/Thighs • Arms</p>
+          <div class="svc-cta">
+            <span class="price">From AED 199</span>
+            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="wrap footgrid">
+    <div class="footgrid">
       <div>
         <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
-        <p class="muted">Cozy, professional, and minimalist—wellness that feels like a clinic, not a spa.</p>
+        <p class="muted">On-demand facials, RF firming, body slimming and relaxing massage — delivered to your home.</p>
       </div>
       <div class="contact">
         <p>📍 Across UAE (home service)</p>
@@ -191,5 +268,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
