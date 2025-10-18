@@ -1,273 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emoi Ladies Saloon</title>
-
-  <!-- Fonts & Favicon -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emoi ProBeauty — Home Service Facials, RF Firming, Slimming & Massage (UAE)</title>
+  <meta name="description" content="Emoi ProBeauty brings device-assisted facials, RF firming, body slimming and relaxing massage to your home across the UAE. Clean, clinical-style care with professional hygiene." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emoi ProBeauty — Home Service Beauty, UAE" />
+  <meta property="og:description" content="Device-assisted facials, RF firming, slimming & massage — delivered at home." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR-DOMAIN" />
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/images/hero-face.jpg.jpg" />
 
   <style>
     :root{
-      --brand:#16a34a;        /* green accent */
-      --bg:#fffaf6;           /* warm beige bg */
-      --ink:#243041;          /* dark ink */
-      --muted:#6b7280;        /* gray text */
-      --card:#ffffff;         /* card bg */
-      --ring:rgba(22,163,74,.12);
-      --line:#eef3ef;
+      --ink:#0c2231; --muted:#4b5563; --accent:#16a34a; --bg:#fffaf6; --line:#e5e7eb;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{color:inherit}
+    body{margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6}
+    a{text-decoration:none; color:inherit}
+
     /* Header */
-    header{
-      padding:22px 20px;
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      max-width:1120px;margin:0 auto;
-    }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
-    .cta-whatsapp{
-      background:var(--brand);color:#fff;text-decoration:none;border-radius:999px;padding:10px 16px;
-      font-weight:700;box-shadow:0 8px 20px var(--ring)
-    }
+    header{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line)}
+    .nav{max-width:1100px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:16px; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand img{height:26px; width:auto}
+    .navlinks{display:flex; gap:16px; flex-wrap:wrap; color:#163046}
+    .wact{background:var(--accent); color:#fff; padding:10px 14px; border-radius:999px; font-weight:700; box-shadow:0 8px 20px rgba(22,163,74,.18)}
 
-    /* Hero */
-    .hero{
-      max-width:1120px;margin:18px auto 24px;padding:0 20px;
-      display:grid;grid-template-columns:1.05fr .95fr;gap:26px
-    }
-    .h-text h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px}
-    .h-text p{color:var(--muted);margin:0 0 18px}
-    .h-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px var(--ring)}
-    .btn-ghost{background:#fff;color:var(--ink);border:1px solid #eee}
-    .h-media{
-      background:linear-gradient(180deg,#ffffff,#f8fff9);
-      border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.07)
-    }
-    .h-media img{width:100%;height:auto;display:block}
+    main{max-width:1100px; margin:0 auto; padding:0 16px}
 
-    /* Feature (pillars) */
-    .pillars{max-width:1120px;margin:8px auto 28px;padding:0 20px}
-    .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .pillar{
-      background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;
-      box-shadow:0 10px 24px rgba(0,0,0,.04)
-    }
-    .pillar h3{margin:6px 0 6px;font-size:16px}
-    .pillar p{color:var(--muted);font-size:14px;margin:0}
-    .pillar .icon{
-      display:inline-flex;align-items:center;justify-content:center;
-      width:48px;height:48px;border-radius:12px;background:#f6fff9;border:1px solid #e5f4ea;margin:0 auto 10px
-    }
-    .pillar .icon svg{width:26px;height:26px;stroke:var(--brand);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    /* HERO SLIDER */
+    .hero--slider{position:relative; overflow:hidden; border-radius:24px; margin:20px 0 28px; background:#eee}
+    .hero__slides{position:relative}
+    .hero__slide{position:relative; display:none}
+    .hero__slide.is-active{display:block}
+    .hero__slide img{width:100%; height:56vw; max-height:540px; object-fit:cover; display:block}
+    .hero__copy{position:absolute; left:5%; bottom:6%; max-width:640px; color:var(--ink); background:rgba(255,255,255,.92); padding:18px 20px; border-radius:16px; backdrop-filter:saturate(1.2) blur(3px)}
+    .hero__copy h1{margin:0 0 6px; font-size:clamp(24px,4.5vw,44px); line-height:1.1}
+    .hero__copy p{margin:0; font-size:clamp(14px,2.2vw,18px)}
+    .hero__nav{position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.92); border:0; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:28px; line-height:44px}
+    .hero__nav.prev{left:10px} .hero__nav.next{right:10px}
+    .hero__dots{position:absolute; left:50%; transform:translateX(-50%); bottom:10px; display:flex; gap:8px}
+    .hero__dots button{width:8px; height:8px; border-radius:50%; border:0; background:rgba(0,0,0,.25)}
+    .hero__dots button.is-active{background:var(--accent)}
 
-    /* Sections & services */
-    section{max-width:1120px;margin:0 auto;padding:0 20px 46px}
-    h2{font-size:28px;margin:30px 0 12px}
-    .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
-    .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.05)}
-    .svc img{width:100%;height:210px;object-fit:cover;display:block}
-    .svc .pad{padding:14px}
-    .muted{color:var(--muted)}
-    .svc-cta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
-    .price{font-weight:700}
-    .mini-btn{border:1px solid #dfe6e0;border-radius:999px;padding:8px 12px;text-decoration:none;font-weight:600;color:var(--ink);background:#fff}
-    .mini-btn:hover{border-color:#cfd7d0}
+    /* ABOUT */
+    .about{padding:56px 0; background:#fff}
+    .about__head{max-width:760px; margin:0 0 24px}
+    .about__head h2{margin:0 0 8px; font-size:clamp(26px,4vw,36px)}
+    .about__head p{margin:0; color:#4b5563}
+    .about__row{display:grid; grid-template-columns:1.05fr 1fr; gap:24px; align-items:center; margin:28px 0}
+    .about__row--rev{grid-template-columns:1fr 1.05fr}
+    .about__row--rev .about__media{order:2} .about__row--rev .about__text{order:1}
+    .about__media{overflow:hidden; border-radius:16px; box-shadow:0 10px 18px rgba(2,23,36,.06)}
+    .about__media img{width:100%; height:100%; max-height:420px; object-fit:cover; display:block; transform:scale(1.02); transition:transform .5s}
+    .about__media:hover img{transform:scale(1.06)}
+    .about__text h3{margin:0 0 8px; font-size:clamp(20px,3vw,26px)}
+    .about__bullets{margin:10px 0 0; padding:0; list-style:none}
+    .about__bullets li{position:relative; padding-left:22px; margin:6px 0; color:#0c2231}
+    .about__bullets li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700}
+    .about__cta{display:flex; gap:12px; margin-top:14px}
+    .btn{display:inline-block; background:var(--accent); color:#fff; border:0; padding:10px 16px; border-radius:12px}
+    .btn--ghost{background:transparent; border:1px solid var(--line); color:var(--ink)}
+
+    /* SERVICES */
+    .services{padding:56px 0; background:#fbfbfb}
+    .services__head{margin-bottom:20px}
+    .services__head h2{margin:0 0 8px; font-size:clamp(26px,4vw,36px)}
+    .services__head p{margin:0; color:var(--muted)}
+    .services__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+    .svc-card{display:flex; flex-direction:column; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 10px 18px rgba(2,23,36,.06)}
+    .svc-card__media img{width:100%; height:230px; object-fit:cover; display:block}
+    .svc-card__body{padding:16px; display:flex; flex-direction:column; gap:10px}
+    .svc-card__sub{margin:0; color:#374151}
+    .svc-card__bullets{margin:2px 0 0; padding:0; list-style:none}
+    .svc-card__bullets li{margin:4px 0; color:#0c2231; position:relative; padding-left:18px}
+    .svc-card__bullets li::before{content:"•"; position:absolute; left:0; color:var(--accent)}
+    .svc-card__prices{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px}
+    .svc-card__prices--stack{grid-template-columns:1fr}
+    .svc-price{background:#f7fafc; border:1px solid #edf2f7; border-radius:12px; padding:10px 12px; display:flex; align-items:center; justify-content:space-between}
+    .svc-card__note{color:#6b7280; margin:0; font-size:14px}
+    .svc-card__cta{display:flex; gap:10px; margin-top:6px}
+    .svc-card .btn{padding:10px 14px}
+
+    /* FLIP GALLERY */
+    .flip-gallery{padding:56px 0; background:#fff}
+    .flip-gallery__head h2{margin:0 0 8px; font-size:clamp(26px,4vw,36px)}
+    .flip-gallery__head p{margin:0; color:var(--muted)}
+    .flip-gallery__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .flip{perspective:1000px; outline:none}
+    .flip:focus-visible{box-shadow:0 0 0 3px rgba(22,163,74,.35); border-radius:12px}
+    .flip__inner{position:relative; width:100%; height:320px; transform-style:preserve-3d; transition:transform .6s; border-radius:16px; overflow:hidden; box-shadow:0 10px 18px rgba(2,23,36,.06); background:#fff}
+    @media (hover:hover) and (pointer:fine){ .flip:hover .flip__inner{transform:rotateY(180deg)} }
+    .flip__front,.flip__back{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; flex-direction:column; justify-content:flex-end}
+    .flip__front img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    .flip__front figcaption{position:relative; z-index:2; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0)); color:#fff; padding:16px; font-weight:600}
+    .flip__back{transform:rotateY(180deg); padding:16px; background:#f9fafb; align-items:flex-start; justify-content:center; gap:10px}
+    .flip__back h3{margin:0} .flip__back p{margin:0; color:#374151}
+    .flip.is-flipped .flip__inner{transform:rotateY(180deg)}
+
+    /* CONTACT (inline success) */
+    .contact{padding:56px 0; background:linear-gradient(180deg,#fafafa,#fff)}
+    .contact__wrap{display:grid; gap:24px; grid-template-columns:1.2fr 1fr; align-items:start}
+    .contact__form label{display:block; font-size:14px; margin:10px 0}
+    .contact__form input,.contact__form textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px}
+    .contact__form button{margin-top:8px; padding:12px 18px; border:0; background:var(--accent); color:#fff; border-radius:12px; cursor:pointer; font-weight:700}
+    .contact__success{margin:0 0 12px; padding:12px 14px; border-radius:12px; background:#e8fbf3; color:#0c4b32; border:1px solid #b9f0da; font-weight:700}
 
     /* Footer */
-    footer{padding:22px 20px 50px;border-top:1px solid var(--line);background:#fff}
-    .footgrid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:20px}
-    .contact p{margin:4px 0}
+    footer{border-top:1px solid var(--line); background:#fff; margin-top:40px}
+    .foot{max-width:1100px; margin:0 auto; padding:18px 16px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .muted{color:#6b7280}
 
     /* Responsive */
-    @media (max-width:960px){
-      .hero{grid-template-columns:1fr}
-      .pillars-grid{grid-template-columns:1fr}
-      .row3{grid-template-columns:1fr}
+    @media (max-width:1000px){
+      .services__grid,.flip-gallery__grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:860px){
+      .hero__copy{max-width:85%}
+      .about__row,.about__row--rev{grid-template-columns:1fr}
+      .contact__wrap{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .services__grid,.flip-gallery__grid{grid-template-columns:1fr}
+      .hero__slide img{max-height:420px}
+      .navlinks{display:none}
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Header -->
   <header>
-    <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
-    <a class="cta-whatsapp" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
+    <div class="nav">
+      <div class="brand">
+        <!-- Optional tiny logo -->
+        <!-- <img src="assets/images/logo.png" alt="Emoi ProBeauty logo"> -->
+        <span>Emoi ProBeauty</span>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="wact" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
   </header>
 
-  <!-- HERO (new copy + your image) -->
-  <div class="hero">
-    <div class="h-text">
-      <h1>Glow at Home, Expert Care On Your Schedule</h1>
-      <p>On-demand facials (brightening, hydrating & RF), tightening for face & body, slimming, and relaxing massage — we come to you across the UAE.</p>
-      <div class="h-actions">
-        <a class="btn btn-primary" href="https://wa.me/971567544684?text=Hi%20Emoi!%20I%20want%20to%20book%20a%20home%20treatment." target="_blank" rel="noopener">Book Now</a>
-        <a class="btn btn-ghost" href="#services">View Services</a>
-      </div>
-    </div>
-    <div class="h-media">
-      <img src="assets/images/hero-face.jpg.jpg?v=4" alt="Home facial treatment">
-    </div>
-  </div>
-
-  <!-- Three small feature boxes with SVG icons -->
-  <section class="pillars">
-    <div class="pillars-grid">
-      <!-- Licensed Therapists -->
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 21s-6.5-4.1-8.7-7.2C1.6 11.7 2 9.2 3.6 7.9a4 4 0 0 1 5.4.5l.9 1 .9-1a4 4 0 0 1 5.4-.5c1.6 1.3 2 3.8.3 5.9C18.5 16.9 12 21 12 21z"/>
-            <path d="M12 14.5c-1.5-1.2-3.7-1.6-5.5-.9"/>
-          </svg>
+  <main>
+    <!-- HERO SLIDER -->
+    <section id="hero" class="hero hero--slider" aria-label="Featured treatments">
+      <div class="hero__slides">
+        <div class="hero__slide is-active">
+          <img src="assets/images/hero-face.jpg.jpg" alt="Hydrating facial at home">
+          <div class="hero__copy">
+            <h1>Glow at Home, Expert Care</h1>
+            <p>On-demand facials (brightening, hydrating & RF), tightening for face & body, slimming and relaxing massage — we come to you across the UAE.</p>
+          </div>
         </div>
-        <h3>Licensed Therapists</h3>
-        <p>Friendly, professional and detail-oriented care at home.</p>
-      </div>
-
-      <!-- Pro Devices -->
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15 4l5 5M3 21l7.5-7.5M13 6l5 5"/>
-            <rect x="2.5" y="15.5" width="5" height="6" rx="2"/>
-            <path d="M8 14l2-2"/>
-          </svg>
+        <div class="hero__slide">
+          <img src="assets/images/rf-face.jpg.jpg" alt="RF face firming">
+          <div class="hero__copy">
+            <h1>Lift • Firm • Tighten</h1>
+            <p>RF firming for face & jawline — visible glow and better contour.</p>
+          </div>
         </div>
-        <h3>Pro Devices</h3>
-        <p>RF firming, deep cleansing & body shaping equipment.</p>
+        <div class="hero__slide">
+          <img src="assets/images/rf-body.jpg.jpg" alt="RF body contouring">
+          <div class="hero__copy">
+            <h1>Body Slim & Tone</h1>
+            <p>Targeted body tightening and slimming with device-assisted care.</p>
+          </div>
+        </div>
+      </div>
+      <button class="hero__nav prev" aria-label="Previous slide">‹</button>
+      <button class="hero__nav next" aria-label="Next slide">›</button>
+      <div class="hero__dots" aria-label="Hero navigation"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="about__head">
+        <h2>About Emoi ProBeauty</h2>
+        <p>Licensed mobile beauty & wellness across the UAE. We bring device-assisted facials, RF firming, slimming and relaxing massage to your home — with clinic-grade hygiene and professional care.</p>
       </div>
 
-      <!-- We Come to You -->
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 12h18l-1.5-4.5A2 2 0 0 0 17.6 6H6.4a2 2 0 0 0-1.9 1.5L3 12z"/>
-            <path d="M5 12v5a1 1 0 0 0 1 1h1"/>
-            <path d="M19 12v5a1 1 0 0 1-1 1h-1"/>
-            <circle cx="7.5" cy="18" r="1.6"/>
-            <circle cx="16.5" cy="18" r="1.6"/>
-            <path d="M3 14h18"/>
-          </svg>
+      <article class="about__row">
+        <div class="about__media">
+          <img src="assets/images/hero-face.jpg.jpg" alt="Clinically clean, device-assisted facial at home">
         </div>
-        <h3>We Come to You</h3>
-        <p>Appointments anywhere in the UAE, on your time.</p>
+        <div class="about__text">
+          <h3>Clinic-style care, delivered</h3>
+          <p>Every visit is performed by trained therapists using sanitized devices and single-use consumables. Expect a calm experience with visible results — without leaving home.</p>
+          <ul class="about__bullets">
+            <li>Device-assisted facials (brightening, hydrating, RF)</li>
+            <li>Face & body firming with radio-frequency</li>
+            <li>Body sculpt & slimming protocols</li>
+            <li>Relaxing massage with professional draping</li>
+          </ul>
+          <div class="about__cta">
+            <a class="btn" href="#services">View Services</a>
+            <a class="btn btn--ghost" href="https://wa.me/971567544684" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="about__row about__row--rev">
+        <div class="about__media">
+          <img src="assets/images/rf-face.jpg.jpg" alt="RF face firming for lift and contour">
+        </div>
+        <div class="about__text">
+          <h3>Visible lift & firmness</h3>
+          <p>Our RF programs target laxity on the face, jawline and body. We tailor energy, time and pass count to your skin type for safe, measurable improvement.</p>
+          <ul class="about__bullets">
+            <li>Custom settings for comfort & efficacy</li>
+            <li>Immediate glow; progressive tightening</li>
+            <li>Non-invasive, low downtime</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="about__row">
+        <div class="about__media">
+          <img src="assets/images/rf-body.jpg.jpg" alt="RF body contouring and localized tightening">
+        </div>
+        <div class="about__text">
+          <h3>Body slim & tone</h3>
+          <p>Localized protocols help smooth the stomach, thighs and arms. Most clients choose a focused plan of 4–6 sessions for best definition.</p>
+          <ul class="about__bullets">
+            <li>Targeted areas (tummy, thighs, arms)</li>
+            <li>Plan-based session scheduling</li>
+            <li>Comfortable, guided experience</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="about__row about__row--rev">
+        <div class="about__media">
+          <img src="assets/images/svc-massage.jpg.jpg" alt="Relaxing massage with proper draping and hygiene">
+        </div>
+        <div class="about__text">
+          <h3>Hygiene first, always</h3>
+          <p>We follow clinic-grade cleaning and use fresh linens for every visit. Your therapist sanitizes all equipment before and after the session.</p>
+          <ul class="about__bullets">
+            <li>Medical-grade disinfection process</li>
+            <li>Fresh towels & disposable consumables</li>
+            <li>Respectful, professional draping</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <div class="services__head">
+        <h2>Services</h2>
+        <p>Clinic-style treatments at home — device-assisted care with professional hygiene.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Services (two rows of small photo boxes with prices) -->
-  <section id="services">
-    <h2>Our Services</h2>
-
-    <!-- Row 1 -->
-    <div class="row3">
-      <article class="svc">
-        <img src="assets/images/whitening.jpg.jpg?v=4" alt="Whitening facial">
-        <div class="pad">
-          <strong>Whitening Facial</strong>
-          <p class="muted">Even tone • bright glow • device-assisted</p>
-          <div class="svc-cta">
-            <span class="price">AED 149</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+      <div class="services__grid">
+        <!-- Firming + Whitening -->
+        <article class="svc-card">
+          <figure class="svc-card__media">
+            <img src="assets/images/whitening.jpg.jpg" alt="Firming & Whitening Treatment">
+          </figure>
+          <div class="svc-card__body">
+            <h3>Firming + Whitening Treatment</h3>
+            <p class="svc-card__sub">Reveal glowing, brighter & tighter skin instantly with RF + brightening protocol.</p>
+            <ul class="svc-card__bullets">
+              <li>Cleanse, serums, RF device, mask, moisturizer</li>
+              <li>Custom energy & pass count for your skin</li>
+              <li>Clinic-grade hygiene & single-use consumables</li>
+            </ul>
+            <div class="svc-card__prices">
+              <div class="svc-price"><span>1 Area</span><span>AED 350</span></div>
+              <div class="svc-price"><span>2 Areas</span><span>AED 550</span></div>
+            </div>
+            <p class="svc-card__note">Best results: 5 sessions (1 session per week)</p>
+            <div class="svc-card__cta">
+              <a class="btn" href="https://wa.me/971567544684?text=Hi%20Emoi%20ProBeauty%2C%20I%27d%20like%20to%20book%20Firming%20%2B%20Whitening." target="_blank" rel="noopener">Book on WhatsApp</a>
+              <a class="btn btn--ghost" href="#gallery">View Results</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="svc">
-        <img src="assets/images/rf-face.jpg.jpg?v=4" alt="RF firming facial">
-        <div class="pad">
-          <strong>Firming Facial (RF)</strong>
-          <p class="muted">Lift & tighten • radio-frequency</p>
-          <div class="svc-cta">
-            <span class="price">AED 199</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+        <!-- Slimming -->
+        <article class="svc-card">
+          <figure class="svc-card__media">
+            <img src="assets/images/slimming.jpg.jpg" alt="Slimming Treatment">
+          </figure>
+          <div class="svc-card__body">
+            <h3>Slimming Treatment</h3>
+            <p class="svc-card__sub">Sculpt, tighten & tone your body with visible results after just 1 session.</p>
+            <ul class="svc-card__bullets">
+              <li>Focused RF for abdomen, thighs or arms</li>
+              <li>Comfortable, guided session</li>
+              <li>Plan-based approach for definition</li>
+            </ul>
+            <div class="svc-card__prices">
+              <div class="svc-price"><span>1 Area</span><span>AED 350</span></div>
+              <div class="svc-price"><span>2 Areas</span><span>AED 550</span></div>
+            </div>
+            <p class="svc-card__note">Best results: 5 sessions (1 session per week)</p>
+            <div class="svc-card__cta">
+              <a class="btn" href="https://wa.me/971567544684?text=Hi%20Emoi%20ProBeauty%2C%20I%27d%20like%20to%20book%20Slimming%20Treatment." target="_blank" rel="noopener">Book on WhatsApp</a>
+              <a class="btn btn--ghost" href="#about">Learn More</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="svc">
-        <img src="assets/images/svc-massage.jpg.jpg?v=4" alt="Relaxation massage">
-        <div class="pad">
-          <strong>Relaxation Massage (60 min)</strong>
-          <p class="muted">Calm stress • restore balance</p>
-          <div class="svc-cta">
-            <span class="price">AED 129</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+        <!-- Massage -->
+        <article class="svc-card">
+          <figure class="svc-card__media">
+            <img src="assets/images/svc-massage.jpg.jpg" alt="Relaxing Massage">
+          </figure>
+          <div class="svc-card__body">
+            <h3>Massage</h3>
+            <p class="svc-card__sub">Professional draping & clean practice. Select your preferred style:</p>
+            <ul class="svc-card__bullets">
+              <li>Thai • Sports • Deep Tissue • Hot Stone • Aroma / Oil / Relax</li>
+            </ul>
+            <div class="svc-card__prices svc-card__prices--stack">
+              <div class="svc-price"><span>Single</span><span>1 hr – AED 350 | 90 mins – AED 500</span></div>
+              <div class="svc-price"><span>Couple</span><span>1 hr – AED 550 | 90 mins – AED 700</span></div>
+            </div>
+            <div class="svc-card__cta">
+              <a class="btn" href="https://wa.me/971567544684?text=Hi%20Emoi%20ProBeauty%2C%20I%27d%20like%20to%20book%20a%20Massage." target="_blank" rel="noopener">Book on WhatsApp</a>
+              <a class="btn btn--ghost" href="#contact">Ask a Question</a>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
+    </section>
 
-    <!-- Row 2 -->
-    <div class="row3">
-      <article class="svc">
-        <img src="assets/images/firming.jpg.jpg?v=4" alt="Hydrating facial">
-        <div class="pad">
-          <strong>Hydrating Facial</strong>
-          <p class="muted">Deep cleanse • hydrate • glow</p>
-          <div class="svc-cta">
-            <span class="price">AED 159</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+    <!-- FLIP GALLERY -->
+    <section id="gallery" class="flip-gallery">
+      <header class="flip-gallery__head">
+        <h2>Gallery</h2>
+        <p>Treatment moments & natural results — minimal, clean and professional.</p>
+      </header>
+      <div class="flip-gallery__grid">
+        <!-- Cards 1–7 -->
+        <article class="flip" tabindex="0" aria-label="Firming Facial (RF)">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/firming.jpg.jpg" alt="Firming Facial (RF)">
+              <figcaption>Firming Facial (RF)</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>Firming Facial (RF)</h3>
+              <p>Lift & tighten with radio-frequency. Device-assisted, comfortable and precise.</p>
+              <a class="btn btn--ghost" href="assets/images/firming.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="svc">
-        <img src="assets/images/rf-body.jpg.jpg?v=4" alt="RF tightening body">
-        <div class="pad">
-          <strong>RF Tightening — Body</strong>
-          <p class="muted">Firm skin • boost elasticity</p>
-          <div class="svc-cta">
-            <span class="price">AED 229</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+        <article class="flip" tabindex="0" aria-label="Hydrating / Brightening Facial">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/hero-face.jpg.jpg" alt="Hydrating / Brightening Facial">
+              <figcaption>Hydrating / Brightening Facial</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>Hydrating & Brightening</h3>
+              <p>Deep cleanse, serums and mask for glow and even tone — gentle and effective.</p>
+              <a class="btn btn--ghost" href="assets/images/hero-face.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="svc">
-        <img src="assets/images/slimming.jpg.jpg?v=4" alt="Body slimming">
-        <div class="pad">
-          <strong>Body Slimming</strong>
-          <p class="muted">Abdomen • Legs/Thighs • Arms</p>
-          <div class="svc-cta">
-            <span class="price">From AED 199</span>
-            <a class="mini-btn" href="https://wa.me/971567544684" target="_blank" rel="noopener">Book</a>
+        <article class="flip" tabindex="0" aria-label="RF Body Tightening">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/rf-body.jpg.jpg" alt="RF Body Tightening">
+              <figcaption>RF Body Tightening</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>RF Body Tightening</h3>
+              <p>Targeted body areas for firming and contouring. Visible results in one session.</p>
+              <a class="btn btn--ghost" href="assets/images/rf-body.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
           </div>
+        </article>
+
+        <article class="flip" tabindex="0" aria-label="RF Face Tightening">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/rf-face.jpg.jpg" alt="RF Face Tightening">
+              <figcaption>RF Face Tightening</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>RF Face Tightening</h3>
+              <p>Non-invasive tightening for jawline, cheeks & forehead. Comfortable heat profile.</p>
+              <a class="btn btn--ghost" href="assets/images/rf-face.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip" tabindex="0" aria-label="Slimming Treatment">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/slimming.jpg.jpg" alt="Slimming Treatment">
+              <figcaption>Slimming Treatment</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>Slimming Treatment</h3>
+              <p>Sculpt, tighten & tone abdomen, thighs or arms with plan-based sessions.</p>
+              <a class="btn btn--ghost" href="assets/images/slimming.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip" tabindex="0" aria-label="Massage">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/svc-massage.jpg.jpg" alt="Massage">
+              <figcaption>Massage</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>Massage</h3>
+              <p>Thai • Sports • Deep Tissue • Hot Stone • Aroma — professional draping.</p>
+              <a class="btn btn--ghost" href="assets/images/svc-massage.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip" tabindex="0" aria-label="Whitening Facial">
+          <div class="flip__inner">
+            <figure class="flip__front">
+              <img src="assets/images/whitening.jpg.jpg" alt="Whitening Facial">
+              <figcaption>Whitening Facial</figcaption>
+            </figure>
+            <div class="flip__back">
+              <h3>Whitening Facial</h3>
+              <p>Even tone & bright glow using a device-assisted brightening protocol.</p>
+              <a class="btn btn--ghost" href="assets/images/whitening.jpg.jpg" target="_blank" rel="noopener">View larger</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT (Netlify inline success) -->
+    <section id="contact" class="contact">
+      <div class="contact__wrap">
+        <div class="contact__info">
+          <h2>Book at Home</h2>
+          <p>Tell us your preferred date/time & location. We’ll confirm on WhatsApp.</p>
+          <ul>
+            <li>📍 UAE (mobile service)</li>
+            <li>📱 WhatsApp: +971 56 754 4684</li>
+            <li>✉️ Email: <a href="mailto:info@emoiladiessaloon.ae">info@emoiladiessaloon.ae</a></li>
+          </ul>
         </div>
-      </article>
-    </div>
-  </section>
+
+        <div style="width:100%">
+          <div id="contact-success" class="contact__success" hidden>
+            ✅ Thank you! Your request has been sent. We’ll reach out shortly.
+          </div>
+
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact__form">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+            <label>Full name *<input name="Name" required></label>
+            <label>Phone / WhatsApp *<input name="Phone" required></label>
+            <label>Preferred date/time<input name="When"></label>
+            <label>Message<textarea name="Message" rows="4" placeholder="Treatments you want, area (abdomen/thigh/arms), location…"></textarea></label>
+
+            <button type="submit">Send Booking Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <div class="footgrid">
-      <div>
-        <div class="brand"><span class="dot"></span> Emoi Ladies Saloon</div>
-        <p class="muted">On-demand facials, RF firming, body slimming and relaxing massage — delivered to your home.</p>
-      </div>
-      <div class="contact">
-        <p>📍 Across UAE (home service)</p>
-        <p>📞 +971 56 754 4684</p>
-        <p>✉️ <a href="mailto:info@emoiladiessaloon.ae">info@emoiladiessaloon.ae</a></p>
-        <p>💬 <a href="https://wa.me/971567544684" target="_blank" rel="noopener">WhatsApp Booking</a></p>
-      </div>
+    <div class="foot">
+      <div>© <span id="y"></span> Emoi ProBeauty</div>
+      <div class="muted">Across UAE • +971 56 754 4684 • info@emoiladiessaloon.ae</div>
     </div>
   </footer>
 
+  <!-- JS: hero slider, flip, contact inline submit -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // HERO slider
+    (function(){
+      const root = document.querySelector('.hero--slider');
+      if(!root) return;
+      const slides = [...root.querySelectorAll('.hero__slide')];
+      const dotsWrap = root.querySelector('.hero__dots');
+      let i = 0, timer;
+
+      function go(n){
+        slides[i].classList.remove('is-active');
+        dotsWrap.children[i].classList.remove('is-active');
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add('is-active');
+        dotsWrap.children[i].classList.add('is-active');
+      }
+      slides.forEach((_,idx)=>{
+        const b=document.createElement('button');
+        if(idx===0) b.classList.add('is-active');
+        b.addEventListener('click',()=>{go(idx); restart()});
+        dotsWrap.appendChild(b);
+      });
+      root.querySelector('.prev').onclick=()=>{go(i-1); restart()};
+      root.querySelector('.next').onclick=()=>{go(i+1); restart()};
+      function auto(){ timer=setInterval(()=>go(i+1), 5000) }
+      function restart(){ clearInterval(timer); auto() }
+      auto();
+    })();
+
+    // Flip gallery (tap/click or keyboard)
+    document.querySelectorAll('.flip').forEach(card=>{
+      card.addEventListener('click', ()=> card.classList.toggle('is-flipped'));
+      card.addEventListener('keydown', e=>{
+        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); card.classList.toggle('is-flipped'); }
+      });
+    });
+
+    // Netlify inline submit for contact form
+    (() => {
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('contact-success');
+      if (!form || !success) return;
+
+      function encode(data){
+        return Object.keys(data).map(k => encodeURIComponent(k)+"="+encodeURIComponent(data[k])).join("&");
+      }
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const data = {}; fd.forEach((v,k)=>data[k]=v);
+        try{
+          const res = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": form.getAttribute("name"), ...data })
+          });
+          if (res.ok){
+            success.hidden = false; form.reset();
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          } else { alert("Sorry, we couldn't send your request. Please WhatsApp us directly."); }
+        }catch(err){ alert("Network error. Please WhatsApp us directly."); }
+      });
+    })();
+  </script>
 </body>
 </html>
+
